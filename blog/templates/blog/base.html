@@ -13,6 +13,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body class="is-preload">
@@ -77,6 +79,8 @@
 
         <!-- Highlights -->
             <section class="wrapper">
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
                 {% block content %}
                 {% endblock %}
             </section>
@@ -88,6 +92,7 @@
             <footer id="footer">
                 <div class="inner">
                     <div class="content">
+                        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                         <section>
                             <h3>Accumsan montes viverra</h3>
                             <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
