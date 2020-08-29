@@ -1,6 +1,10 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from django import forms
+from localflavor.us.forms import USStateSelect
+from localflavor.us.us_states import STATE_CHOICES
+from localflavor.us.models import USStateField
 
 
 class Post(models.Model):
@@ -24,11 +28,12 @@ class Practice(models.Model):
     email = models.EmailField(max_length=254)
     aboutField = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    state_select = USStateField(choices=STATE_CHOICES)
+    # state = models.TextField(USStateField(widget=forms.Select(choices=YOUR_STATE_CHOICES)))
 
     def publish(self):
         self.published_date = timezone.now()
         self.save()
 
     def __str__(self):
-        return self.title
+        return self.practiceName

@@ -1,0 +1,16 @@
+{% extends '/blog/base.html' %}
+{% block content %}
+	<div class='practice'>
+
+		{% if practice.created_date %}
+			<div class='date'>
+				{{ practice.created_date }}
+			</div>
+		{% endif %}
+
+		<h2> {{ practice.practiceName }} </h2>
+
+		<p> {{ practice.aboutField|linebreaksbr }} </p>
+
+	</div>
+{% endblock %}

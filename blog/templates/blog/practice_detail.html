@@ -1,0 +1,29 @@
+{% extends 'blog/base_practicePosts.html' %}
+{% block content %}
+
+<div class="row">
+		<div class="col-md-8">
+			<h2> {{ practice.practiceName }} </h2>
+			<p>
+				{% if practice.created_date %}
+					<div class='date'>
+						{{ practice.created_date }}
+					</div>
+				{% endif %}
+			</p>
+			<p> {{ practice.aboutField|linebreaksbr }} </p>
+		</div>
+		<div class="col-md-4">
+			<h2>
+				Heading
+			</h2>
+			<p> {{ practice.state_select|linebreaksbr }} </p>
+			<p>
+				<a class="btn" href="#">View details »</a>
+			</p>
+		</div>
+	</div>
+
+
+
+{% endblock %}
